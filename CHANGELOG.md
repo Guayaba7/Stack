@@ -4,6 +4,14 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.6.4-beta] - 2026-10-21
+
+This update keeps cards visible when the daily price source omits a price and adds a close button to every window.
+
+### Added
+- **Previous-day prices.** When Scryfall does not provide a price for a card version on a given day, Stack now uses the most recent price from the previous 14 days instead of omitting the card. These prices are marked with a dagger (†) in the Market list, the gallery, the card details and the card sheet; hovering over the mark shows the date of the price. Versions whose price fell below the catalog threshold are not affected and are excluded as before.
+- **Close buttons.** Every window that opens over the main screen, such as Settings, Stores, Cart, Import, Report, Help and the price alert, now has a close button (✕) in its upper-right corner, in addition to the Esc key.
+
 ## [0.6.3-beta] - 2026-10-21
 
 This update simplifies how store prices reach Stack, makes the purchase settings visible across the application and adds a help button.
