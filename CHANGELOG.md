@@ -4,6 +4,18 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.6.2-beta] - 2026-10-21
+
+This update changes how Stack is built and distributed. The program is now compiled to native machine code, and neither the installer nor the update packages contain the program's source code.
+
+### Changed
+- **Native compilation.** Stack is now compiled with Nuitka instead of being packaged with PyInstaller. The program and its store modules are translated to C and compiled into native Windows binaries, which protects the source code and may shorten start-up time.
+- **Compiled update packages.** Lightweight updates (`codigo-x.y.z.zip`) now contain compiled modules instead of source files. Stack verifies that each module was built for its own runtime before installing it.
+- **One-time full update.** Because the program's runtime has changed, computers running version 0.6.1 or earlier receive this version through the complete installer. Later versions return to lightweight updates.
+
+### Fixed
+- If a lightweight update cannot be loaded, Stack no longer attempts the same lightweight update again; it uses the complete installer instead.
+
 ## [0.6.1-beta] - 2026-10-21
 
 This update introduces lightweight updates, fixes missing Hareruya prices in installed copies of Stack and makes the first data download visible on the loading screen.
