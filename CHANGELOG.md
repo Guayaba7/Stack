@@ -4,6 +4,24 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.6.3-beta] - 2026-10-21
+
+This update simplifies how store prices reach Stack, makes the purchase settings visible across the application and adds a help button.
+
+### Changed
+- **Stack opens on the Market tab.** Stack no longer opens the settings screen on start when the exchange rate or the purchase percentage is missing. A short notice explains where to set them instead.
+- **Purchase settings are reflected in Market and Analysis.** The Movers, New entries and Watchlist views now show the amount you would pay for each card, calculated from the purchase percentage and limited by the minimum ROI and the minimum gross margin. Each view also summarizes the effective percentage, ROI and gross margin that result from your settings.
+- **Arbitrage respects the minimum gross margin.** In addition to the minimum ROI, the arbitrage view now hides opportunities below the minimum gross margin set in Settings, and shows the margin of each opportunity.
+- **Store prices are delivered only through the cloud.** Users no longer download store prices themselves, and the Ctrl+T shortcut has been removed. Clicking the store indicators at the bottom right of the window opens a panel that shows the date of each store's prices; its only action, SYNC, checks the cloud for newer data and downloads it. When new price history arrives, the panel offers to restart Stack to load it.
+- **Settings › Reports opens the report form directly**, without an intermediate screen.
+
+### Added
+- **Hareruya availability.** Stack now indicates when Hareruya is not responding, for example during scheduled maintenance, both in the status bar and in the store panel. In that case Stack continues to use the most recent valid Hareruya prices.
+- **Help button.** A new button marked with a question mark, next to the report button, links to the Stack wiki, which explains each screen, how offers, ROI and gross margin are calculated, where prices come from and every keyboard shortcut.
+
+### Removed
+- The Hareruya price source row in Settings › Price.
+
 ## [0.6.2-beta] - 2026-10-21
 
 This update changes how Stack is built and distributed. The program is now compiled to native machine code, and neither the installer nor the update packages contain the program's source code.
