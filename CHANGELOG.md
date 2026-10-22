@@ -4,6 +4,14 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.6.5-beta] - 2026-10-22
+
+This update adds an English interface.
+
+### Added
+- **Language selection.** Stack can now be used in English or Spanish. The language is chosen in Settings › Language, takes effect immediately and is remembered. On first start, Stack uses English unless Windows is set to Spanish.
+- **English interface.** Menus, settings, screens, messages, tooltips, keyboard shortcut names and dates are shown in English. Card names, set names and card text are not translated, since they come from the price sources. Any text that does not yet have a translation is shown in Spanish.
+
 ## [0.6.4-beta] - 2026-10-21
 
 This update keeps cards visible when the daily price source omits a price and adds a close button to every window.
