@@ -4,6 +4,17 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.6.6-beta] - 2026-10-22
+
+This update addresses start-up failures and records a report whenever Stack does not start or close correctly.
+
+### Added
+- **Automatic failure reports.** Stack now records the progress of each start. If Stack closes unexpectedly, stops responding while loading or is closed before it finishes loading, the next start saves a report in the `fallos` folder inside the application data folder. The report includes the loading step that was reached, the session log, and the state of the program at the time of a crash or freeze. Stack shows a notice when a new report has been saved. The 30 most recent reports are kept.
+
+### Fixed
+- **Start-up could remain on "looking for new data" indefinitely.** The connection to the cloud now has a total time limit of 45 seconds. If the cloud does not respond within that time, Stack continues with the data already saved on the computer instead of waiting.
+- The loading screen now shows "LOADING…" when the interface is in English.
+
 ## [0.6.5-beta] - 2026-10-22
 
 This update adds an English interface.
