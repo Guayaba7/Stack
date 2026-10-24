@@ -4,6 +4,22 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.6.7-beta] - 2026-10-23
+
+This update adds card search in other languages, corrects Hareruya prices that were taken from products other than single cards and restores the session after a normal close.
+
+### Added
+- **Search in other languages.** The Market and Analysis search and the list import now also recognize the official card names in Spanish, French, German, Italian and Portuguese. For example, searching for "relampago" finds Lightning Bolt. Accents and capital letters are not required. The names are added with the next daily cloud update.
+
+### Fixed
+- **Hareruya prices from products that are not single cards.** Art Series cards, mini posters, Jumpstart theme cards and Vanguard cards are no longer matched to a card version. For example, Urza, Lord High Artificer (Modern Horizons) showed a Hareruya price of ¥30, which was the price of its Art Series card. Consignment items, artist proofs, signed, graded, inked and altered cards, and multi-copy sets are also excluded, since their prices do not represent a single near-mint copy sold by the store. Prices are corrected with the next daily cloud update.
+- **Incomplete Hareruya matching on repeated cloud runs.** When the daily cloud update ran again on the same day, for example to retry Hareruya, the full Scryfall card index was not available. Card versions under $2 could not be recognized and some products were left unmatched. The index is now always available before Hareruya prices are matched.
+- **The cart, search and filters were not restored after a normal close.** In version 0.6.6, the record used to detect failed starts was saved in the same file as the session, so closing Stack normally removed the session. The two are now stored separately.
+
+### Changed
+- **Language setting.** Settings › Language now shows its title and label only in the selected language.
+- The store review tools show, for Hareruya and StarCityGames, the share of products matched against the 99% target, the number of ambiguous matches, which are listed first, and the reason for each product that needs review.
+
 ## [0.6.6-beta] - 2026-10-22
 
 This update addresses start-up failures and records a report whenever Stack does not start or close correctly.
