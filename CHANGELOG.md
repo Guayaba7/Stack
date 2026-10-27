@@ -4,6 +4,21 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.7.2-beta] - 2026-10-27
+
+This update reorganizes Settings into three columns and adds a home page with the day's market movers and the articles published on the Stack website, which can now be read inside the application.
+
+### Added
+- **Home page.** Clicking the Stack logo in the upper-left corner opens a home page that is separate from the Market, Analysis, Inventory and History tabs. It shows:
+  - **Movers:** a row of up to twelve cards with their image, the price change for the period, the printing and the current price. Tab switches between cards that went up and cards that went down, and Enter or a click opens the card details.
+  - **Articles:** the articles published on the Stack website, with cover image, date, reading time and summary. The featured article is shown larger.
+  - **Today:** the date of the prices, the exchange rate, the number of inventories and copies, the watchlist and its price alerts, and the account status, with shortcuts to the four tabs.
+  Esc or any tab returns to the previous view. Typing closes the home page.
+- **Article reader.** Articles open inside Stack with their images, tables, notes and card lists. Card names in an article are linked to their details in Stack and show the current price; card lists show the image and price of each card. Links to other websites open in the browser, and OPEN ON THE WEBSITE opens the article on the Stack website. The list of articles is kept on the computer, so it remains available without a connection; opening an article requires a connection.
+
+### Changed
+- **Settings in three columns.** Settings now opens on three groups: DATA (Price and Cloud), INTERFACE (Language, Video, Theme and Controls) and ACCOUNT (User and Reports). Choosing a group with Enter or a click shows its sections in the second column, and choosing a section shows its options in the third column, where they are edited as before. Each group and section has a short description, the path is shown in the title (for example SETTINGS › INTERFACE › THEME), and Left arrow or Esc goes back one column. The window now uses most of the screen, with larger spacing and text.
+
 ## [0.7.1-beta] - 2026-10-26
 
 This update makes synchronization work in both directions, so cards added on the Stack website or on another computer now appear in the application. It also fixes copying the recovery code, redesigns the account window and adds the account to Settings.
