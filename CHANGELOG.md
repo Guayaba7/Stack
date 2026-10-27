@@ -4,6 +4,17 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.7.3-beta] - 2026-10-27
+
+This update turns the movers on the home page into a rotating exhibit that also includes the watchlist, gives the home page more room and shows the animated background of the theme behind it.
+
+### Changed
+- **Rotating exhibit on the home page.** The row of movers now scrolls by itself as a continuous strip, without a scroll bar, and pauses while the pointer is over it. After the day's movers it shows the watchlist cards that have a price alert, with the target price, and then the rest of the watchlist with its price change. Each card shows its image, printing and current price, and a click opens the card details. Tab still switches between cards that went up and cards that went down. When animations are turned off, the cards are shown without movement.
+- **Layout of the home page.** The content is centered, with more space between sections and between the lines of each card.
+- **Animated background.** With animated themes (Plasma, Grid Shift, Contour and Galaxy) and with a custom background image, the background is now visible behind the home page instead of a solid color.
+- **Esc on the home page.** Esc no longer leaves the home page and returns to the previous view; it now does nothing there. The home page is left with any tab (F5 to F8). Inside an article, Esc still returns to the home page.
+- **Keyboard on the home page.** The arrow keys move between articles and Enter opens the selected one. Clicking the logo while reading an article returns to the home page.
+
 ## [0.7.2-beta] - 2026-10-27
 
 This update reorganizes Settings into three columns and adds a home page with the day's market movers and the articles published on the Stack website, which can now be read inside the application.
