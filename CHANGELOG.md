@@ -4,6 +4,27 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.7.0-beta] - 2026-10-26
+
+This update introduces Stack accounts. The theme, the watchlist and every inventory can now be saved to an account, shared with other computers and viewed on the Stack website. All data is encrypted on the computer before it is sent, so no one other than the account owner can read it, including the operators of Stack.
+
+### Added
+- **Sign-in on start.** When Stack opens, it asks for a Stack account before loading. Three options are available: sign in, create an account, or continue without an account, in which case Stack works exactly as before and all data remains on the computer. When "Remember on this computer" is selected, later starts sign in automatically; the saved session is protected with the user's Windows account and cannot be used from another Windows account or computer.
+- **Account creation.** An account requires only a username and a password of at least 10 characters; no e-mail address is requested. Before the account is created, the user must confirm that the data cannot be recovered if both the password and the recovery code are lost.
+- **Recovery code.** After the account is created, Stack shows a 25-character recovery code once. It can be copied or saved as a text file in the Documents folder, and the user must confirm that it has been saved before continuing. With the code, "I forgot my password" sets a new password and keeps all data; every other session is closed.
+- **Automatic synchronization.** The theme (including the custom theme colors and the animation setting), the watchlist with its price alerts, and each inventory with its cards, quantities and average costs are uploaded a few seconds after every change, in the background and without interrupting work. Only the items that changed are uploaded. An inventory deleted on the computer is also removed from the account.
+- **Theme shared with the website.** The theme selected in Stack is applied on the Stack website when signed in to the same account. Themes can only be chosen in the application. When a remembered session starts, Stack also applies a theme that was changed on another computer.
+- **First sign-in on another computer.** When a computer without inventories or watchlist signs in, the inventories and the watchlist are brought from the account. A computer that already has data keeps it and adds it to the account.
+- **Account window (Ctrl+U).** Shows the username and the time of the last synchronization, and offers SYNC NOW, CHANGE PASSWORD, NEW CODE (the previous recovery code stops working) and SIGN OUT. Signing out keeps all data on the computer. The shortcut can be changed in Settings like any other.
+
+### Security
+- The password, the recovery code and the data never leave the computer in readable form. The server receives only a hash of the username, a key derived from the password with PBKDF2-SHA256 (600,000 iterations) and documents encrypted with AES-256-GCM. Inventory names are stored only inside the encrypted documents.
+- Changing the password or generating a new recovery code requires proof of the account key in addition to the session, so a stolen session cannot lock the owner out.
+- After eight wrong passwords or recovery codes, the account is locked for 15 minutes.
+
+### Changed
+- Stack now requires the `cryptography` component, which is included in the installer.
+
 ## [0.6.7-beta] - 2026-10-23
 
 This update adds card search in other languages, corrects Hareruya prices that were taken from products other than single cards and restores the session after a normal close.
