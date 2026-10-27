@@ -4,6 +4,30 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.7.1-beta] - 2026-10-26
+
+This update makes synchronization work in both directions, so cards added on the Stack website or on another computer now appear in the application. It also fixes copying the recovery code, redesigns the account window and adds the account to Settings.
+
+### Added
+- **Two-way synchronization.** Stack now also receives changes from the account, not only sends them. Inventories, the watchlist and the theme changed on the Stack website or on another computer are applied on this computer when Stack opens, every minute while it is open, before every upload and when SYNC NOW is used. Open views (Inventory, Watchlist) are refreshed and a notice shows how many copies changed.
+- **The most recent save prevails.** Each inventory, the watchlist and the theme are compared separately. When the same item was changed in two places, the version saved last is kept. If two devices save at the same moment, the second one waits for the next cycle and the decision is made again, so no save is overwritten blindly.
+- **Cards added from the website.** The Stack website can now add a card to any inventory of the account, with quantity and an optional cost per copy. Stack receives the new copies within a minute; the average cost is preserved.
+- **Inventories created or deleted elsewhere.** An inventory created on another computer appears in Stack; one deleted on another computer is also removed here, unless it was changed here afterwards. The default inventory is never deleted.
+- **Settings › User › Stack account.** Shows whether the computer is signed in, with the username and the last synchronization, and opens the account window with Enter.
+
+### Changed
+- **Redesigned account window.** Sign-in and account creation are two tabs in the same window, with one field per line, a highlighted main button and shorter texts. On start, Stack opens on Sign in if an account was used on the computer before, and on Create account otherwise. "Use without an account" remains available at the bottom.
+- **Account actions.** The account window (Ctrl+U) shows the username and the time of the last synchronization, with three actions: CHANGE PASSWORD, RECOVERY CODE and SIGN OUT. Sync now remains available below them. RECOVERY CODE explains that the code cannot be shown again and creates a new one; the previous code stops working. When signed out, "Recover account" is available next to Sign in.
+- **Password requirements shown while typing.** When creating an account, recovering it or changing the password, two indicators show whether the password has at least 10 characters and whether both entries match.
+- **Joining data on first sign-in.** When a computer signs in to an account for the first time, inventories that exist on both sides with the same name, and the default inventories, are combined by adding their copies; the watchlists are combined. Items that exist only in the account are brought in, and items that exist only on the computer are uploaded. Previously, account data was brought in only when the computer had no data.
+- The recovery code is shown on a single line.
+- The "Username" entry in Settings › User is now named "Name on this computer" and explains that it is the name entered on the welcome screen, not the Stack account.
+
+### Fixed
+- **The COPY button did not copy the recovery code.** The Stack window does not allow web pages to write to the clipboard, so the button always reported that the code could not be copied. The code is now copied through the Windows clipboard.
+- **Restoring factory settings while signed in.** Settings › User › Restore factory settings now signs out of the account before deleting local data. Previously, the empty watchlist and default settings left on the computer could have been uploaded to the account and replaced the saved copy.
+- Stack no longer uploads the theme again on every start when it had been received from the account.
+
 ## [0.7.0-beta] - 2026-10-26
 
 This update introduces Stack accounts. The theme, the watchlist and every inventory can now be saved to an account, shared with other computers and viewed on the Stack website. All data is encrypted on the computer before it is sent, so no one other than the account owner can read it, including the operators of Stack.
