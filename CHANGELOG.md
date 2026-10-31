@@ -4,6 +4,24 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.7.4-beta] - 2026-10-31
+
+This update adds Stack inventory files for sharing, records sales with their profit, charts the value of each inventory over time and introduces sale bundles and lot purchases.
+
+### Added
+- **Stack inventory files (.stack).** An inventory can be saved as a single .stack file and sent by WhatsApp, e-mail, USB or any other means. The file contains every card with its exact printing, finish and quantity, compressed and marked as a Stack file, so other programs do not open it. The file of a large inventory weighs a few hundred kilobytes.
+- **Export menu.** EXPORT in Inventory now offers three formats: a .stack file with your purchase costs (for another of your own computers), a .stack file without costs (to share with customers or partners), and the existing text file for Moxfield and Arena.
+- **IMPORT button.** Next to EXPORT, IMPORT opens a .stack file and shows a summary before importing: inventory or bundle name, sender, number of cards and copies, value at today's prices, bundle price and whether costs are included. The cards can be added to a new inventory or to an existing one, and the costs in the file can be used as the acquisition cost. Cards that are not in today's catalog are imported as well.
+- **Inventory value chart.** VIEW in Inventory now cycles between Stock on hand, Saved purchases and Value (chart). The chart shows the total market value of the inventory day by day, with the TCG price of each day converted at today's exchange rate, and a dashed line with the amount paid. The current value is shown at the top with the change for the period in pesos and percent. The period can be 7D, 30D, 90D or ALL (Left and Right arrows), and Tab switches between Actual history (the copies held on each day) and What you have today (today's copies at the prices of each day). Hovering over the chart shows the value, the amount paid, the difference and the number of copies for each day.
+- **Sales.** SELL in Inventory records the sale of the selected card, or of all marked cards, with the quantity and the price per copy, which starts at today's market price. The window shows the amount received and the profit against the average cost before confirming, and accepts a note. Each sale stores the price, the average cost at that moment and the market price of the day.
+- **Purchase and sale history per card.** The card panel in Inventory now lists every entry of the card into the inventory: for purchases, the date, quantity, price paid and market price of that day (hovering shows the margin and the purchase note); for imported or moved copies, their origin. Sales of the card are listed with the price and the profit.
+- **Inventory summary.** Next to the chart, Stack shows the market value today, the amount invested in the current stock, the paper profit, the number of sales, the amount received and the realized profit.
+- **Sale bundles.** BUNDLE in Inventory groups the marked cards into a bundle with a name, a quantity for each card and a bundle price, which starts at 90% of the value as singles. Stack shows the value as singles, the discount and the profit against cost. The bundle can be sold, which splits the price among the cards according to their market value and records each sale, or saved as a .stack file without costs to send to a customer.
+- **Lot purchases.** When saving a purchase, a total price for the whole lot can be entered instead of using the purchase percentage. The total is split among the cards according to their market value, so each card keeps a real acquisition cost. Stack shows the equivalent percentage of the market, the ROI, the gross margin and the potential margin before saving, and the lot price is added to the purchase note.
+
+### Changed
+- Sales, imports from .stack files and lot purchases are synchronized with the Stack account like any other inventory change. The sale records themselves are stored only on the computer.
+
 ## [0.7.3-beta] - 2026-10-27
 
 This update turns the movers on the home page into a rotating exhibit that also includes the watchlist, gives the home page more room and shows the animated background of the theme behind it.
