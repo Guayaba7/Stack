@@ -4,6 +4,20 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.7.5-beta] - 2026-11-02
+
+This update makes it possible to share an inventory or a bundle with a short code or a QR code, simplifies the export window into three buttons and adds prices to the text export.
+
+### Added
+- **Share codes.** An inventory or a bundle can now be shared with a 10-character code (for example K7M4Q-X9P2A) that can be dictated, written down or sent in a message. The cards are encrypted on the computer before they are uploaded, and the code itself is the key, so the Stack server stores only data that it cannot read. Codes expire after 30 days.
+- **QR codes.** The same share can be shown as a QR code. Scanning it with a phone opens the inventory on the Stack website with images and today's prices, without installing anything.
+- **Open by code.** IMPORT now opens a window where a share code can be typed. Stack downloads and decrypts the cards and shows the same summary as a .stack file before importing them into a new or existing inventory. .stack files can still be opened from the same window.
+- **Prices in the text export.** The text file now includes the TCG price in US dollars for each card, and a new section lists each card with its market price per copy and its total, ready to paste into a message. The importable list for Moxfield and Arena is unchanged.
+
+### Changed
+- **Export window.** EXPORT now opens a centered window with three buttons, CODE, QR and TXT, and a switch to include or leave out your purchase costs. The code or the QR code appears in the same window, with buttons to copy the code or the link, and the window closes with Esc or the close button.
+- **Bundles.** The Share button in the bundle window now creates a code or a QR code for the bundle, including its price, instead of saving a file. Purchase costs are never included in a shared bundle.
+
 ## [0.7.4-beta] - 2026-10-31
 
 This update adds Stack inventory files for sharing, records sales with their profit, charts the value of each inventory over time and introduces sale bundles and lot purchases.
