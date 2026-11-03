@@ -4,6 +4,21 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.7.6-beta] - 2026-11-02
+
+This update makes the daily data download about ten times smaller, stops old Hareruya files from piling up on disk and adds filter buttons for color, card type, finish and rarity in Market and Inventory.
+
+### Added
+- **Filter buttons in Market and Inventory.** A new row of buttons under the filters selects cards by color (white, blue, black, red, green, colorless and multicolor), card type (land, creature, instant, sorcery, artifact, enchantment, planeswalker and battle), finish (nonfoil, foil and etched) and rarity (common, uncommon, rare and mythic), with the official mana, type and rarity symbols. The buttons can be combined: colors and types require all the selected values (Blue + Red shows blue-red cards), finishes and rarities accept any of the selected values, and the groups apply together (Foil + Blue + Rare shows blue foil rares). Lands count with the colors of the mana they produce, so Blue + Land includes Islands and blue dual lands. The × button clears the selection. In Market the buttons are also reachable with the keyboard from the filter bar (F3, then Down). In Inventory the footer shows how many cards of the inventory match.
+
+### Changed
+- **Daily data download.** Stack now records which version of each data file it has. When it opens and the cloud has newer data, it downloads only the rows that changed since the previous day and applies them to the files on the computer, verifying the result. A complete file is downloaded only the first time, after several days without opening Stack or if a file was modified on the computer. A typical day now downloads about 15 MB instead of about 150 MB, most of it the current Hareruya matching file.
+- **Smaller price history files.** The price histories of Scryfall, Hareruya, StarCityGames and Card Kingdom are now stored in a compact form that keeps a row only when a price or stock changes. The files read exactly the same prices as before, but take a fraction of the space: with the data available today, the four files take about 130 MB instead of about 480 MB, and they grow much more slowly. The computer that runs the price programs itself keeps the complete Scryfall history.
+- Price charts, stock movement and every other view that reads the histories work with both the compact files and the complete files of the main computer.
+
+### Fixed
+- Every day a new Hareruya matching file of about 70 MB was saved with a different name and the old ones were never removed. Stack now keeps the two most recent files and deletes the older ones once their prices are in the Hareruya history.
+
 ## [0.7.5-beta] - 2026-11-02
 
 This update makes it possible to share an inventory or a bundle with a short code or a QR code, simplifies the export window into three buttons and adds prices to the text export.
