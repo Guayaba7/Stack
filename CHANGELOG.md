@@ -4,6 +4,23 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.8.0-beta] - 2026-11-08
+
+This update adds every card printing under US$2 to Stack, with prices from TCG and Card Kingdom every day and from StarCityGames and Hareruya every week. It also adds CSV import from other collection sites and a remove button in the cart.
+
+### Added
+- **Cards under $2.** Stack now knows every printing listed on Scryfall, about 118,000 more than before. Some of them have no price yet. The new **< $2** button in the Market filter bar (or the U key on that bar) includes them in searches and lists. It is off by default, so Market looks the same as before until it is turned on. Cards under $2 carry a small "<$2" mark in the list and the gallery. Their TCG and Card Kingdom prices are updated every day, and their StarCityGames and Hareruya prices once a week.
+- **Any card in an inventory.** Purchases, imports, share codes and the Stack account now accept cards under $2. Inventories value them at today's price, so the application and the Stack website recognize the same cards.
+- **Price history for cards under $2.** To keep the files small, Stack records a new price for these cards only when it moves by at least 10% and at least 5 cents.
+- **CSV import.** IMPORT has a new CSV button that opens the collection files exported by Moxfield, ManaBox, Deckbox, Archidekt, TCGplayer, Delver Lens, Dragon Shield and MTGGoldfish. Each row is matched only to its exact printing, using the Scryfall ID when the file has one, or the set, collector number, finish and language. Stack never replaces a row with a similar printing or one with a close price. Rows that do not match are not imported. The summary lists them with the reason (for example, the printing does not exist in foil or the collector number belongs to another card), and COPY THE FULL LIST copies all of them. The rest of the import works like a .stack file: a new or existing inventory, with a count of the cards under $2.
+- **Remove from the cart.** Every card in the cart has a ✕ button, in the cart panel, the full cart window, the Market list and the gallery, which removes the card without changing the quantity to zero by hand.
+- **Developer tools.** The Hareruya and StarCityGames inconsistency lists have a new **ONLY < $2** chip. It shows the weekly review list for cards under $2: printings that matched with doubts, more than one possible version, or no match.
+
+### Changed
+- The daily cloud download includes the files for cards under $2. The first download after updating is larger. After that, only the changes are downloaded, as before.
+- The computer that runs the Hareruya prices now also downloads the full Hareruya catalog of cards under $2 once a week. That run takes about 75 minutes longer than a normal day.
+- Analysis still uses only cards of $2 or more.
+
 ## [0.7.6-beta] - 2026-11-02
 
 This update makes the daily data download about ten times smaller, stops old Hareruya files from piling up on disk and adds filter buttons for color, card type, finish and rarity in Market and Inventory.
