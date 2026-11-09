@@ -4,6 +4,44 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.9.0-beta] - 2026-11-08
+
+This update adds two new tabs, META and DECKBUILDER. META shows which decks and cards are being played in each format, collected every day from several tournament sites. DECKBUILDER builds and edits decks with Stack prices, EDHREC recommendations for Commander and automatic legality checks. Decks are saved encrypted in the Stack account and can also be opened on the Stack website.
+
+### Added
+- **META tab (Ctrl+3).** It covers Standard, Pioneer, Modern, Legacy, Pauper, Commander and cEDH, with the decks of the last 21 days. The data is collected every day in the cloud from MTGO, MTGTop8, MTGGoldfish, TopDeck.gg and EDHREC. Each deck is classified into an archetype by comparing its cards with the typical list of each known archetype. The tab has the following views:
+  - **Archetypes:** the share of each archetype, its trend against the previous week, its colors and the price of a typical list.
+  - **Decks:** every recorded deck with its event, date, place and player.
+  - **Staples:** the cards that appear in the most decks of the format, with their average number of copies.
+  - **Thermometer:** the cards whose presence in the meta is rising or falling the most.
+  - **Alerts:** cards from the user's inventories that enter or leave the meta, or that change legality (for example, a ban).
+  - **Commanders:** in Commander and cEDH, the most played commanders and pairs, with their number of decks and trend.
+- **Deck panel.** Selecting a deck in META shows its list grouped by card type, with the following:
+  - its total price at TCG, Card Kingdom, StarCityGames and Hareruya;
+  - a budget version that uses the cheapest printing of each card at any store;
+  - the cards missing from the user's inventories and their cost, which COPY can send to IMPORT LIST in Market or to a store.
+- **Copy to DECKBUILDER.** Enter, or the COPY TO DECKBUILDER button, saves any META deck as a new deck of the user.
+- **DECKBUILDER tab (Ctrl+4).** It is an MTGO-style editor, with the card search on the left and the deck on the right.
+  - The search filters by name, type, color and format, and shows only cards that are legal in the selected format.
+  - The zones are main, sideboard, commander and maybe. Enter adds a card to the main deck, Shift+Enter to the sideboard, Alt+Enter to maybe and Ctrl+Enter sets it as the commander.
+  - In Commander and cEDH, setting the commander automatically marks its color identity, and the search then shows only cards inside that identity.
+  - Each card shows its legality in every format and its available printings with TCG and Card Kingdom prices. A printing can be chosen for the deck.
+  - The deck is checked continuously for the following problems, which are listed under the deck:
+    - cards that are not legal or are banned in the format;
+    - more copies than allowed;
+    - too few cards;
+    - a missing commander;
+    - cards outside the commander's identity.
+  - Commander decks show an estimated bracket based on the number of Game Changers they contain.
+  - Decks can be duplicated, deleted, copied as an MTGO or Arena list, or imported from a pasted list in MTGO, Arena, Moxfield or Archidekt format.
+- **EDHREC recommendations.** In Commander, the EDHREC panel of the deckbuilder shows the recommended cards for the selected commander or pair, with their synergy and the share of decks that play them. It also shows the EDHREC average deck. Any recommendation can be added to the deck with Enter.
+- **Decks in the Stack account.** Decks are saved automatically and synchronized with the Stack account, encrypted in the same way as inventories, so that only the user can read them. The same decks can be viewed and edited on the Stack website, which has an Arena-style editor designed for phones.
+- **Deck share codes.** A deck can be shared with a 10-character code, like inventories. The code opens in Stack (OPEN CODE) or on the Stack website, where the deck can be copied to the recipient's own decks.
+
+### Changed
+- The daily cloud download now includes two new files: the rules and legality of every card (about 7 MB) and the META data.
+- The English interface includes the texts of the new tabs.
+
 ## [0.8.0-beta] - 2026-11-08
 
 This update adds every card printing under US$2 to Stack, with prices from TCG and Card Kingdom every day and from StarCityGames and Hareruya every week. It also adds CSV import from other collection sites and a remove button in the cart.
