@@ -4,6 +4,37 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.9.2-beta] - 2026-11-09
+
+This update merges Inventory and Collection into a single COLLECTION tab with a portfolio chart. It also adds ten new themes, changes the CRT theme to white phosphor and fixes the deck panel moving when a deck is selected.
+
+### Added
+- **Nine new full-screen animated themes**, drawn behind the whole interface like Plasma, Grid Shift, Contour and Galaxy:
+  - **Flow:** thousands of particles that follow colored currents and leave fading trails.
+  - **Circuit:** copper circuit traces with cyan light pulses that travel along them.
+  - **Lava lamp:** large magenta and orange blobs that rise, sink and merge.
+  - **Constellation:** drifting stars that join with golden lines when they come close.
+  - **Embers:** sparks that rise from a fire at the bottom of the screen and flicker out.
+  - **Pool floor:** cyan light reflections moving like the floor of a swimming pool.
+  - **Digital rain:** columns of mana symbols and characters that fall in ice blue.
+  - **Retro sunset:** a striped sun behind mountains and palm trees. As in Galaxy, the card names and titles cycle through the sunset colors, each row slightly offset.
+  - **Mana cycle:** every few seconds one mana color (white, blue, black, red or green) dominates the background, and the accent, borders and selection of the whole interface take on that color.
+- **Parchment theme.** A light sepia theme, like an old-border card, without animation.
+- Each new theme has its own animated preview in the theme list. All of them also apply on the Stack website.
+- **Portfolio chart.** The COLLECTION tab opens with a chart of the combined value of all binders over time. It has the same periods (7D, 30D, 90D, all) and modes (actual history, or today's holdings at each day's prices) as the inventory chart, and shows what was paid.
+- **VIEW CHART button** in the binder details, which opens that binder directly in its value chart.
+
+### Changed
+- **One COLLECTION tab.** Inventory and Collection are now a single COLLECTION tab, which takes the place of INVENTORY and its F7 shortcut. The separate COLLECTION tab and its Ctrl+5 shortcut were removed.
+  - The tab opens with the portfolio chart, the binders (inventories) and the decks.
+  - Opening a binder shows the usual inventory view, which now has a ‹ COLLECTION button (or Backspace) to return.
+  - Clicking the COLLECTION tab or pressing F7 always returns to the portfolio.
+- **CRT theme.** It now uses a cold white phosphor instead of green, so it no longer resembles the default green theme.
+- **Binder tiles.** The tiles in COLLECTION show the difference against the purchase cost on its own line, so the values no longer overflow.
+
+### Fixed
+- **DECKBUILDER.** When a panel had been resized, selecting a deck of a different format moved the whole search area, because the SEARCH / EDHREC selector appeared only for Commander and changed the height of the filter rows. The selector now always keeps its place (hidden outside Commander), so the area no longer moves.
+- **META.** Moving the selection no longer redraws the whole list. Card images no longer flicker or jump when a deck is selected.
 ## [0.9.1-beta] - 2026-11-09
 
 This update reorganizes the DECKBUILDER and adds an Arena-style gallery to it. It also adds a COLLECTION tab, archetype tiles in META and the CRT theme. A custom theme can now take its colors from its background image.
