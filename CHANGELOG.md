@@ -4,6 +4,19 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.9.3-beta] - 2026-11-09
+
+This update adds a gallery view to binders, gives the Parchment theme its own typeface and makes the colors of the META archetype tiles match the deck shown in the details.
+
+### Added
+- **Binder gallery view.** A binder's stock can now be shown as a gallery of card images, as in Market. Each image shows the number of copies, the finish, today's market price and the difference against what was paid. The LIST / GALLERY selector is in the binder bar, Ctrl+G switches between them, and the choice is remembered. In the gallery, the arrow keys move by card and by row, and multiple selection (Ctrl+click) marks cards with an amber border.
+
+### Changed
+- **Parchment theme typeface.** The theme now uses a serif typeface (Palatino Linotype, with Book Antiqua and Georgia as alternatives), with lining, evenly spaced numbers so that prices stay aligned. Tab names and titles use small capitals. The same typeface applies on the Stack website.
+
+### Fixed
+- **META archetype tile colors.** The colors on an archetype tile now come from the same deck list shown in the details panel. Before, they came from every card played in that archetype, so a tile could show colors that the displayed deck does not use.
+- **Right panel.** When switching between COLLECTION, META and the DECKBUILDER, the right panel no longer keeps the details of the previous tab.
 ## [0.9.2-beta] - 2026-11-09
 
 This update merges Inventory and Collection into a single COLLECTION tab with a portfolio chart. It also adds ten new themes, changes the CRT theme to white phosphor and fixes the deck panel moving when a deck is selected.
