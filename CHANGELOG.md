@@ -16,6 +16,7 @@ This update adds a gallery view to binders, gives the Parchment theme its own ty
 
 ### Fixed
 - **META archetype tile colors.** The colors on an archetype tile now come from the same deck list shown in the details panel. Before, they came from every card played in that archetype, so a tile could show colors that the displayed deck does not use.
+- **Retro Sunset theme.** The stripes on the sun no longer jump back to the top or extend past its edge. They now stay inside the sun and move down smoothly, getting thicker as they go.
 - **Right panel.** When switching between COLLECTION, META and the DECKBUILDER, the right panel no longer keeps the details of the previous tab.
 ## [0.9.2-beta] - 2026-11-09
 
