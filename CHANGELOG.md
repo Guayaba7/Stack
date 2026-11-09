@@ -4,6 +4,37 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.9.1-beta] - 2026-11-09
+
+This update reorganizes the DECKBUILDER and adds an Arena-style gallery to it. It also adds a COLLECTION tab, archetype tiles in META and the CRT theme. A custom theme can now take its colors from its background image.
+
+### Added
+- **COLLECTION tab (Ctrl+5).** Binders (inventories) and saved decks are shown separately, each as a tile.
+  - A binder tile shows its most valuable card, the number of copies and cards, its market value and the difference against its cost.
+  - A deck tile shows its commander or its most expensive card, its format, color identity, card count, TCG price, the share of the deck already owned and any legality problems.
+  - Selecting a tile shows its details in the right panel. Double click or Enter opens it in INVENTORY or in the DECKBUILDER. New binders and decks can be created from this tab.
+- **DECKBUILDER gallery view (Ctrl+G).** It is a view in the style of MTG Arena.
+  - Search results are shown as compact card images. Each image shows the number of copies already in the deck, the price and the copies owned.
+  - The deck is shown below in columns by mana value, plus columns for lands, sideboard and maybe. Each card appears as a strip with its art, cost and +/− controls, and the commander is shown as an image.
+  - The choice between list and gallery is remembered.
+- **Card printings.** Clicking a card in the gallery, or pressing Space on a selected card, opens all of its printings with images and TCG and Card Kingdom prices. Choosing a printing sets it as the deck version, and the card can be added to the main deck, the sideboard or as the commander from the same view.
+- **META archetype tiles.** Archetypes and commanders are shown as tiles in the style of MTGGoldfish. Each tile shows the art of a signature card, the colors, the meta share and trend, the deck price and the cost of the missing cards. The signature card is the archetype's key card when MTGGoldfish provides one; otherwise, it is the card most characteristic of that archetype. The table view remains available (Ctrl+G).
+- **CRT theme.** It reproduces an old green phosphor monitor, with scan lines, a slow sweep and a slight flicker. Its preview in the theme list is animated. It also applies on the Stack website.
+- **Colors from the background image.** The custom theme has a new MATCH THE IMAGE option. It takes the base tone and the two most vivid colors of the background image and turns them into a readable palette. On the website and on the phone, the custom theme continues to apply its colors only, without the image.
+
+### Changed
+- The top tabs show only their names. The keyboard shortcut of each tab appears in its tooltip.
+- The empty card image no longer shows a message when no card is selected.
+- **DECKBUILDER filters.** They now use the same icons as Inventory: the color symbols, the type icons (including planeswalker and battle) and the rarity icons, with a button to clear them. The mana value filter is a boxed selector, and the filters are arranged in two rows.
+- **EDHREC in the DECKBUILDER.** The EDHREC option appears only for Commander-style formats. The filters also apply to the EDHREC recommendations.
+- **DECKBUILDER and META buttons.** The DECKBUILDER actions (new, delete, import, copy list, duplicate, share) and the META format buttons use the same framed button style as Inventory.
+- **Deck list.** It is now organized as a table with column headers, a card count and subtotal per group, alternating row shading and the price of each line. The deck summary shows the store totals as a selector and groups the budget price, missing cards, curve and colors in separate rows.
+- **Resizable deck panels.** The deck panel in the DECKBUILDER and in META can be resized by dragging its border, like the other panels. In the gallery view, the height of the deck area can be adjusted. Double click restores the original size.
+- The search list is more compact, with the copies already in the deck and a rarity icon on each row.
+
+### Fixed
+- The color counts of the deck summary were displayed with an incorrect layout because two styles shared the same name.
+
 ## [0.9.0-beta] - 2026-11-08
 
 This update adds two new tabs, META and DECKBUILDER. META shows which decks and cards are being played in each format, collected every day from several tournament sites. DECKBUILDER builds and edits decks with Stack prices, EDHREC recommendations for Commander and automatic legality checks. Decks are saved encrypted in the Stack account and can also be opened on the Stack website.
