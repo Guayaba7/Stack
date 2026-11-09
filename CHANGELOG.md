@@ -41,6 +41,12 @@ This update adds two new tabs, META and DECKBUILDER. META shows which decks and 
 ### Changed
 - The daily cloud download now includes two new files: the rules and legality of every card (about 7 MB) and the META data.
 - The English interface includes the texts of the new tabs.
+- The StarCityGames and Hareruya price downloads now use 32 connections at a time instead of 16, so they finish in about half the time. Each connection keeps its pause between requests, and the existing protections against rate limits and blocks are unchanged.
+
+### Fixed
+- Since version 0.8.0, Stack could stay on the loading screen at 100% and never open. When loading finished, Stack requested the card types and colors (which grew with the cards under $2) and the historical lows and highs at the same time, about 8 MB in single responses, and Windows left the window not responding. These responses, together with the Card Kingdom prices, the format legalities, the card names in other languages and the market summary, are now sent in parts, like the catalog. The heaviest ones are requested one after another after the window opens.
+- The loading screen reached 100% before loading had finished, because the step for cards under $2 was not counted. The step now appears in the list, and 100% is shown only when Stack is ready.
+- If something fails at the end of loading, Stack now opens anyway, shows a notice and saves the error in data/app/stack_log.txt, instead of staying on the loading screen.
 
 ## [0.8.0-beta] - 2026-11-08
 
