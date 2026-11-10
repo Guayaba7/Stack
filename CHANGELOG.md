@@ -4,6 +4,22 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.9.4-beta] - 2026-11-10
+
+This update adds two animated themes, lets the deckbuilder search find cards by their name in other languages, puts the full card actions on the card shown in META and the DECKBUILDER, and makes the price ticker open the card in Market from any tab.
+
+### Added
+- **Black Hole theme.** A full-screen animated background drawn on the graphics card. Each pixel follows a ray of light that bends around the black hole, so the back of the accretion disk shows above and below it, and the side of the disk that turns toward the viewer is brighter. When matter falls in, a flare lights the disk and the application's accent changes from orange to white. The background is drawn at half resolution and scaled up to keep it light. If the computer cannot use WebGL, a simple gradient is shown instead.
+- **Seigaiha theme.** The Japanese wave pattern in wine tones, drifting slowly to the side. A band of light crosses the pattern diagonally, and while it passes over the list the accent becomes lighter.
+- **Card actions in META and the DECKBUILDER.** The card shown in the right panel now has the same buttons as Market: VIEW FULL SHEET (Ctrl+I), ADD TO WATCHLIST (Ctrl+D), compare, price alert and report. They act on the printing used in the deck, or on the cheapest printing when the deck does not specify one. The keyboard shortcuts now act on this card in both tabs.
+
+### Changed
+- **Deckbuilder search in other languages.** The deckbuilder search, including the commander search, now finds cards by their name in other languages, as Market does. For example, "relampago" finds Lightning Bolt. Results that match the full name in any language are listed first.
+
+### Fixed
+- **Price ticker.** Clicking a card in the ticker opened Market with its details only when Collection was open. It now does so from every tab, including META and the DECKBUILDER.
+- **Keyboard shortcuts in META and the DECKBUILDER.** Ctrl+I and Ctrl+D acted on the last card selected in Market rather than on the card shown in the right panel.
+
 ## [0.9.3-beta] - 2026-11-09
 
 This update adds a gallery view to binders, gives the Parchment theme its own typeface and makes the colors of the META archetype tiles match the deck shown in the details.
