@@ -4,6 +4,22 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.9.5-beta] - 2026-11-11
+
+This update lets a deck hold several printings of the same card, adds a way to clear a deck, and makes basic lands and specific printings easy to find in the deckbuilder.
+
+### Added
+- **Several printings of the same card in a deck.** Each printing of a card is now its own line in the deck, with its set and collector number shown next to the name, for example "4 Forest ◆ AKH #254" and "2 Forest ◆ DMU #275". Each line keeps its own quantity and price, and the + / − buttons and the keyboard act only on that line. Before, a deck could use only one printing per card.
+  - In the printings view (Space), clicking a printing selects it, and + MAIN / + SIDE add one copy of that printing on its own line. The new USE IN ALL button (Space) moves every copy of the card to the selected printing.
+  - In the card panel on the right, every printing has a + button that adds one copy of it to the deck.
+  - When the printing of a line is changed to one that already has its own line, both lines are joined.
+  - Moving a copy to the sideboard (S) keeps its printing.
+- **Clear deck.** The new CLEAR button removes every card from the deck. The commander stays. It asks for a second click before acting, and Ctrl+Z restores the cards.
+- **Search by collector number and set.** The deckbuilder search accepts a collector number and a set code together with the name. "forest #254" and "tatyova #371" find that printing, and "forest dmu" finds the cards of that set. The result shows the printing found and its price, and adding it adds that exact printing.
+
+### Changed
+- **Search order.** A card whose name, in any language, is exactly what was typed is now listed first. For example, "forest" now shows the basic Forest first, ahead of Misty Rainforest or Karplusan Forest.
+
 ## [0.9.4-beta] - 2026-11-10
 
 This update adds two animated themes, lets the deckbuilder search find cards by their name in other languages, puts the full card actions on the card shown in META and the DECKBUILDER, and makes the price ticker open the card in Market from any tab.
