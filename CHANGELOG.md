@@ -4,6 +4,27 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.9.6-beta] - 2026-11-17
+
+This update makes it easy to split the copies of a card between several printings, adds a link that opens any deck with its prices on the Stack site, and adds a button that shows the back of double-faced cards.
+
+### Added
+- **Split copies between printings.** When a card is selected in the deck, the panel on the right shows the total number of copies with − / + buttons at the top, and the list of printings below it. Each printing has its own − / quantity / + buttons:
+  - + on a printing moves one copy to it from another printing, starting with the copies that have no printing (the cheapest). The total does not change.
+  - − on a printing sends one copy back to the cheapest printing.
+  - Clicking a printing row does the same as its + button.
+  - The + / − buttons at the top add or remove copies. A new copy goes to the cheapest printing, and a copy is removed first from the cheapest printing.
+  - The same panel changes the printing of the commander.
+- **Keyboard control of the split.** In the deck, V on a card opens the split of that card. ↑ and ↓ choose a printing, + or → moves a copy to it, − or ← sends a copy back, and Esc or V closes the split.
+- **Deck link.** The new LINK button, in the deck bar and in META, copies a link that opens the deck on the Stack site. The page shows the total price at each store, the cards grouped by type with quantity, mana cost and price, and a gallery view. Anyone can open the link, it does not need an account, and it does not expire, because the whole deck travels inside the link.
+- **Flip button for double-faced cards.** Cards with a back face, such as Delver of Secrets and the modal double-faced cards, now show a 🔄 button next to the other card buttons, in Market, Collection, the deck panel and the card panel on the right. It shows the back face of the card, and a second click shows the front again.
+
+### Changed
+- **One row per card in the deck.** A card with copies in several printings is now shown on a single row with its total, and a line under the name shows the split, for example "2 ◆ M11 #146 · 2 ◆ 2XM #117". The price of the row is the sum of the price of each printing. The + / − buttons, the keyboard and Delete act on the card as a whole.
+- **Deck gallery.** Each card appears once, with the image of the printing that has the most copies, and a mark shows how many printings it uses.
+- **COPY LIST and import keep the printing.** COPY LIST writes each printing on its own line in the common "2 Lightning Bolt (M11) 146 *F*" format. Importing a list in that format adds each card in the exact printing and finish written in the list.
+- **The printing list keeps its order.** In the split, the printings stay sorted by price while copies are moved, so a printing does not jump to another row after a click.
+
 ## [0.9.5-beta] - 2026-11-11
 
 This update lets a deck hold several printings of the same card, adds a way to clear a deck, and makes basic lands and specific printings easy to find in the deckbuilder.
