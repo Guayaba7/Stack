@@ -17,7 +17,7 @@ This update makes it easy to split the copies of a card between several printing
   - The same panel changes the printing of the commander.
 - **Keyboard control of the split.** In the deck, V on a card opens the split of that card. ↑ and ↓ choose a printing, + or → moves a copy to it, − or ← sends a copy back, and Esc or V closes the split.
 - **Deck link.** The new LINK button, in the deck bar and in META, copies a link that opens the deck on the Stack site. The page shows the total price at each store, the cards grouped by type with quantity, mana cost and price, and a gallery view. Anyone can open the link, it does not need an account, and it does not expire, because the whole deck travels inside the link.
-- **Flip button for double-faced cards.** Cards with a back face, such as Delver of Secrets and the modal double-faced cards, now show a 🔄 button next to the other card buttons, in Market, Collection, the deck panel and the card panel on the right. It shows the back face of the card, and a second click shows the front again.
+- **Flip button for double-faced cards.** Cards with a back face, such as Delver of Secrets and the modal double-faced cards, now show a flip button, drawn in the same style as the other card buttons,, in Market, Collection, the deck panel and the card panel on the right. It shows the back face of the card, and a second click shows the front again.
 
 ### Changed
 - **One row per card in the deck.** A card with copies in several printings is now shown on a single row with its total, and a line under the name shows the split, for example "2 ◆ M11 #146 · 2 ◆ 2XM #117". The price of the row is the sum of the price of each printing. The + / − buttons, the keyboard and Delete act on the card as a whole.
