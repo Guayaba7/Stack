@@ -4,6 +4,20 @@ All notable changes to Stack are documented in this file. Each version that is p
 
 Version numbers follow the `MAJOR.MINOR.PATCH-STAGE` scheme. During the beta stage, only the last number increases with each published update.
 
+## [0.9.7-beta] - 2026-11-20
+
+This update adds a way to move the cards of a deck into an inventory.
+
+### Added
+- **TO INVENTORY button for decks.** The DECKBUILDER bar and the META deck view have a new TO INVENTORY button. It offers two options:
+  - **All the cards of the deck:** the main deck, the sideboard and the commander.
+  - **Only the cards I am missing:** the copies that your inventories do not have yet, counted by card name.
+- **The IMPORT LIST window does the import.** The button opens the IMPORT LIST window with the deck's cards and the printing chosen for each line, so you can check the list and choose the inventory. Then press TO INVENTORY to add the cards, or TO CART to buy them.
+  - The window opens with basic lands included and the printing of each line respected.
+  - Cards with no chosen printing go in as the cheapest one.
+  - The cards enter without cost, like any imported list.
+  - Printings that are not in the catalog stay in the window so you can review them.
+
 ## [0.9.6-beta] - 2026-11-17
 
 This update makes it easy to split the copies of a card between several printings, adds a link that opens any deck with its prices on the Stack site, and adds a button that shows the back of double-faced cards.
